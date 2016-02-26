@@ -1,0 +1,23 @@
+body {
+  font: 16px/2.0 "Helvetica Neue",Helvetica,"Hiragino Sans GB","Segoe UI","Microsoft Yahei",Tahoma,Arial,STHeiti,sans-serif;
+  margin: 0; 
+}
+.login{
+    width: 500px;
+    margin: 200px auto;
+    padding: 50px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    background-color: #f9f9f9; 
+    box-shadow: 10px 10px 5px #888888;
+}
+.login .control-label{
+	text-align: right;
+}
+.login-footer{
+	margin-top: 20px;
+	padding: 20px;
+	border-top: 1px solid #ddd;
+	text-align: right;
+}
