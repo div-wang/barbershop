@@ -16,7 +16,7 @@
 
 ## 项目地址
 
-[div-wang.com](http://div-wang.com/barbershop/): 
+[barbershop.div-wang.com](http://barbershop.div-wang.com/): 
 
 ## License
 

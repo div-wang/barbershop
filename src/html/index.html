@@ -9,7 +9,36 @@
 </head>
 
 <body>
-    
+	<div class="container-fluid" style="margin-top:30px">
+		<div class="col-md-12">
+			<div class="col-md-3">
+				<div class="input-group">
+					<label class="input-group-addon">卡号类型：</label>
+					<select id="cardType" class="form-control">
+						<option value="0">全部</option>
+						<option value="1">8折卡</option>
+						<option value="2">9折卡</option>
+						<option value="3">年卡</option>
+						<option value="4">洗头卡</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="input-group">
+					<label class="input-group-addon">姓名：</label>
+					<input type="text" id="name" class="form-control" placeholder="请输入姓名查询" value="">
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="input-group">
+					<label class="input-group-addon">手机号：</label><input type="text" value="" id="phone" class="form-control" placeholder="请输入手机号">
+				</div>
+			</div>
+			<div class="col-md-1">
+				<input type="button" id="search" class="btn btn-primary" value="查询">
+			</div>
+		</div>
+	</div>
     {% include 'common/foot.html' %}
     {% include 'static/index-js.html' %}
 </body>
