@@ -4,6 +4,7 @@ var isLogin = $.cookie('isLogin')
 if(!isLogin){
 	location.href = 'login.html'
 }
+<<<<<<< HEAD
 $('#search').on('click', function(event) {
 	var data = {},
 		name = $('#name').val(),
