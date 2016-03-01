@@ -1,5 +1,5 @@
 /node_modules
-/src/static/bower_components
+/dist
 .DS_Store
 .DS_Store?
 *.swp
