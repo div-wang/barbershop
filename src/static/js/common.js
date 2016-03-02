@@ -22,8 +22,10 @@
 			var height = window.innerHeight,
 				width = window.innerWidth;
 			$('.main-left,.main-right').height(height)
+			$('.main-box').height(height-120)
 			$(window).resize(function(event) {
 				$('.main-left,.main-right').height(height)
+				$('.main-box').height(height-120)
 			});
 		},
 		menuActive: function(){
