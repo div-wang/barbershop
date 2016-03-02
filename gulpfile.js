@@ -45,7 +45,8 @@ gulp.task('html', function() {
 
 gulp.task('watch', function() {
     gulp.watch('./src/static/css/*.css', ['css'])
-    gulp.watch('./src/html/*.html', ['html'])
+    gulp.watch('./src/static/js/*.js', ['js'])
+    gulp.watch('./src/html/*＊/*.html', ['html'])
 })
 
 gulp.task('build', ['css', 'js', 'img', 'bower', 'html'])
