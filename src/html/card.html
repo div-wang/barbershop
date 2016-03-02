@@ -5,39 +5,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Div-wang</title>
-    <link rel="stylesheet" href="static/css/main.css?time=1456932451148">
-<link rel="stylesheet" href="static/bower/bootstrap/css/bootstrap.min.css?time=1456932451148">
-<script type="text/javascript" src="static/bower/jquery/jquery.min.js?time=1456932451148"></script>
-<script type="text/javascript" src="static/bower/bootstrap/js/bootstrap.min.js?time=1456932451148"></script>
-<script type="text/javascript" src="static/bower/vue/vue.js?time=1456932451148"></script>
-<script type="text/javascript" src="static/js/common.js?time=1456932451148"></script>
+    {% include 'static/common.html' %}
 </head>
 
 <body>
 	<section class="main">
-		<div class="main-left">
-    <ul class="nav">
-    	<li>
-            <a href="index.html" title="报表统计"><span class="glyphicon glyphicon-th"></span></a>
-        </li>
-        <li>
-            <a href="card.html" title="会员卡管理"><span class="glyphicon glyphicon-credit-card"></span></a>
-        </li>
-        <li>
-            <a href="person.html" title="会员管理"><span class="glyphicon glyphicon-user"></span></a>
-        </li>
-        <li>
-            <a href="setting.html" class="index-active" title="系统设置"><span class="glyphicon glyphicon-cog"></span></a>
-        </li>
-    </ul>
-</div>
-
+		{% include 'common/menu.html' %}
 		<section class="main-right">
 			<div class="breadcrumbs">
 				<ul class="breadcrumb">
 					<li>
 						<a href="index.html"><i class="glyphicon glyphicon-home"></i> 主页</a>
 					</li>
+					<li class="active">会员卡</li>
 				</ul>
 			</div>
 			<section class="main-box" style="margin-top:30px">
@@ -62,7 +42,8 @@
 					</div>
 					<div class="col-md-3">
 						<div class="input-group">
-							<label class="input-group-addon">手机号：</label><input type="text" value="" id="phone" class="form-control" placeholder="请输入手机号">
+							<label class="input-group-addon">会员卡号：</label>
+							<input type="text" id="cardNo" class="form-control" placeholder="请输入会员卡号" value="">
 						</div>
 					</div>
 					<div class="col-md-1">
@@ -72,11 +53,11 @@
 			</section>
 			<section class="main-box">
 				<div class="main-table"></div>
-				<h3 class="main-tips text-center hide">您目前没有理赔单</h3>
+				<h3 class="main-tips text-center hide">没有查询到会员卡信息</h3>
 			</section>
 		</section>
 	</section>
-    <script type="text/javascript" src="static/js/index.js?time=1456932451148"></script>
+    {% include 'static/index-js.html' %}
 </body>
 
 </html>
