@@ -5,6 +5,22 @@
 		location.href = 'login.html'
 	}
 
+    if (window.performance && window.performance.getEntries) {
+	    var result = [];
+	    // 获取当前页面所有请求对应的PerformanceResourceTiming对象进行分析
+	    window.performance.getEntries().forEach(function (perf) {
+	        result.push({
+	            'url': perf.name,
+	            'entryType': perf.entryType,
+	            'type': perf.initiatorType,
+	            'duration(ms)': perf.duration
+	        });
+	    });
+
+	    // 控制台输出统计结果
+	    console.table(result);
+    }
+
 	w.my = {
 		getParams: function(){
             var s = window.location.search.substr(1),
