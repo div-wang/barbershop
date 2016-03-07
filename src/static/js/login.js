@@ -1,4 +1,8 @@
-
+window.onkeyup = function(event){
+    if (event.keyCode==13) {
+        $('#submit-login').click();
+    } 
+}
 $('#submit-login').on('click',function(event) {
 	var userName = $('#username').val()
 	var password = $('#password').val()

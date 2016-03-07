@@ -67,6 +67,13 @@ a {
     margin-left: 60px;
     box-sizing: border-box;
 }
+.main-search{
+    overflow: auto;
+}
+.main-table{
+    padding: 30px;
+}
+
 
 /*提醒动画*/
 

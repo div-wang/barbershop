@@ -1,7 +1,8 @@
 ;(function(w){
-	var isLogin = $.cookie('isLogin')
+	var isLogin = $.cookie('isLogin'),
+		url = location.href
 
-	if(!isLogin){
+	if(!isLogin&&!url.match('login')){
 		location.href = 'login.html'
 	}
 
@@ -27,6 +28,23 @@
 				$('.main-left,.main-right').height(height)
 				$('.main-box').height(height-120)
 			});
+		},
+		extend: function(target){
+		    var len = arguments.length,
+		        index = 1,
+		        first = arguments[0];
+		    if(typeof target == 'boolean'){
+		        if(target) first = {};
+		        else{
+		            first = arguments[1];
+		            index = 2;
+		        }
+		    }
+		    for(; index < len; index++){
+		        var o = arguments[index];
+		        for(i in o) if(o[i] !== undefined) first[i] = o[i];
+		    }
+		    return first;
 		},
 		menuActive: function(){
 			var menuArr = {index:0,card:1,person:2,setting:3},
