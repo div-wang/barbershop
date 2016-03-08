@@ -36,7 +36,7 @@
 				container.html('<nav class="' + options.containerClass + '"><ul class="pagination ' + options.paginationClass + '"></ul></nav>');
 				ul = container.find('ul.pagination');
 			}
-			that.currentIndex = options.pageNumber;//当前页面
+			that.currentIndex = options.pageNumber==0?1:options.pageNumber;//当前页面
 			that.last =Math.ceil( options.total/options.pageSize);//最后一页
 			that.ul = ul;
 			that.render();
