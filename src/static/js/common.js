@@ -17,7 +17,6 @@
 	            'duration(ms)': perf.duration
 	        });
 	    });
-
 	    // 控制台输出统计结果
 	    console.table(result);
     }
@@ -34,6 +33,21 @@
                 o[aryPair[0]] = aryPair[1]
             }
             return o
+        },
+        getDate: function(time){
+        	String.prototype.towStr = function(ch, length) {
+			    var str = this;
+			    for(var i=0;i<length - this.length; i++)
+			        str = ch + str;
+			  	return str;
+			}
+        	var date = time ? new Date(time):new Date(),
+        		year = date.getFullYear(),
+        		month = (date.getMonth() + 1).toString().towStr(0,2),
+        		day = date.getDate().toString().towStr(0,2),
+        		hours = date.getHours().toString().towStr(0,2),
+        		Minutes = date.getMinutes().toString().towStr(0,2)
+        	return year+'-'+month+'-'+day+' '+hours+':'+Minutes
         },
         resize: function(){
 			var height = window.innerHeight,
@@ -63,22 +77,33 @@
 		    return first;
 		},
 		menuActive: function(){
-			var menuArr = {index:0,card:1,person:2,setting:3},
-				url = w.location.href.split(location.host)[1].split('/')[1].split('.')[0]||'index'
-			$('.main-left a').eq(menuArr[url]).addClass('active') 
+			var menuIndex = 0,
+				url = w.location.href
+			if(url.match('card')){
+				menuIndex = 1
+			}
+			if(url.match('person')){
+				menuIndex = 2
+			}
+			if(url.match('setting')){
+				menuIndex = 3
+			}
+			$('.main-left a').eq(menuIndex).addClass('active') 
 		},
 		tips: function(msg){
 			if($('.tips').length>0){
-				$('.tips').html(msg).width(window.innerWidth-60)
+				$('.tips').html(msg).fadeIn(200)
 			}else{
 				var html = $('<section class="tips">'+msg+'</section>').width(window.innerWidth-60)
 				$(document.body).append(html)
 			}
 			setTimeout(function(){
-				$('.tips').fadeOut('200')
+				$('.tips').fadeOut(200)
 			}, 2000);
+		},
+		getText: function(i){
+			var arr = ['全部','8折卡','9折卡','年卡','洗头卡']
+			return arr[i]
 		}
 	}
-
-
-})(this);
+})(this)

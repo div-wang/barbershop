@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-    font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    font: 13px/1.4  "Microsoft Yahei", Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
     margin: 0;
 }
 
@@ -76,6 +76,32 @@ a {
 .main-page{
     padding: 0 30px;
 }
+.input-box{
+    width: 100%;
+    margin: 20px 0;
+    padding-right: 20px;
+}
+.input-box label{
+    width: 25%;
+    text-align: right;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 900;
+}
+.input-edit{
+    width: 40%;
+    display: inline-block;
+}
+.input-err{
+    width: 25%;
+    display: inline-block;
+    color: #f00;
+}
+.input-button{
+    width: 50%;
+    display: inline-block;
+}
+
 
 /*提醒动画*/
 
@@ -134,7 +160,7 @@ a {
     left: 60px;
     background-color: #5bc0de;
     border-color: #46b8da;
-    box-shadow: 0px 5px 5px #999;
+    box-shadow: 0px 10px 10px #eee;
 }
 
 .tips.seccuss {
