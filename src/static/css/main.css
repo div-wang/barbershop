@@ -71,8 +71,9 @@ a {
     overflow: auto;
 }
 .main-tab {
-    margin: 100px auto 0;
+    margin: 0 auto;
     width: 450px;
+    padding-top: 100px;
 }
 .main-tab a{
     font-size: 50px;
