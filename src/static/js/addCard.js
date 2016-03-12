@@ -87,9 +87,11 @@
 				data: data,
 				success: function(res){
 					console.log(res);
+					alert('添加成功');
 				},
 				error: function(res){
 					console.log(res);
+					alert('添加出错');
 				}
 			})
 		},
@@ -102,9 +104,11 @@
 				data: data,
 				success: function(res){
 					console.log(res);
+					alert('修改成功');
 				},
 				error: function(res){
 					console.log(res);
+					alert('修改出错');
 				}
 			})
 		},
@@ -122,6 +126,7 @@
 				},
 				error: function(res){
 					console.log(res);
+					alert('网络错误');
 				}
 			})
 		},
