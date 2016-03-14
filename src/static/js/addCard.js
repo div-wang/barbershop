@@ -12,6 +12,19 @@
 			$('#updateInfo').on('click', function(event) {
 				that.getData('up')
 			});
+			$('#type').change(function(event) {
+				var num = $('#num').parent().prev()
+				var total = $('#total').parent().prev()
+				var type = event.target.value
+				if(type==1||type==2){
+					total.html('总次数：')
+					num.html('已用次数：')
+				}
+				if(type==3||type==4){
+					total.html('总额：')
+					num.html('余额：')
+				}
+			});
 			$('#birth').datetimepicker({
                 language: 'zh-CN',
                 weekStart: 1,
