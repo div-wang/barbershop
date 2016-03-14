@@ -82,7 +82,7 @@
 			if(url.match('card')){
 				menuIndex = 1
 			}
-			if(url.match('person')){
+			if(url.match('Add')){
 				menuIndex = 2
 			}
 			if(url.match('setting')){
