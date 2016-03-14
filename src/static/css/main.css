@@ -122,6 +122,17 @@ a {
     display: inline-block;
 }
 
+.main-list{
+    padding: 30px 30px 0;
+    width: 100%;
+}
+.main-list li{
+    width: 20%;
+    float: left;
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    list-style: none;
+}
 
 /*提醒动画*/
 

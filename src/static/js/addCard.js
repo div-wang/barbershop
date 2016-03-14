@@ -78,8 +78,8 @@
 		},
 		submitInfo: function(data){	
 			data.date = A.getDate()
-			data.total = 20
-			data.num = 0
+			// data.total = 20
+			// data.num = 0
 			$.ajax({
 				url: '/addCard',
 				type: 'GET',
