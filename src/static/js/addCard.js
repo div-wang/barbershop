@@ -48,8 +48,8 @@
                 	var age = now.getFullYear()-e.date.getFullYear()
                 	if(now.getMonth()<e.date.getMonth()){
                 		age-=1
-                	}else if(now.getMonth()=e.date.getMonth()&&now.getDate()<e.date.getDate()){
-                		age-=1
+                	// }else if(now.getMonth()=e.date.getMonth()&&now.getDate()<e.date.getDate()){
+                	// 	age-=1
                 	}
                 	$('#age').val(age)
                 }

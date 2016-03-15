@@ -1,16 +1,27 @@
+/**
+ * Class representing a dot.
+ * @extends Point
+ */
 ;(function(A){
 	A.resize()
 	A.menuActive()
 	var getList = {
 		type:'',
-		init: function(type){
+		/**
+		 * 列表页面初始化
+		 */
+		init: function(){
 			var that = this
-			that.type = type
 			$('#search').on('click', function(event) {
 				that.getData(1)
 			});
 			that.getData(1)
 		},
+		/**
+		 * [getData 请求数据库数据]
+		 * @param  {num} page [页码]
+		 * @return {obj}      [数据库查询的数据]
+		 */
 		getData: function(page){
 			var that = this,
 				onUrl = '/queryCardAll',
@@ -40,6 +51,10 @@
 				}
 			})
 		},
+		/**
+		 * [showList 根据数据查询列表]
+		 * @param  {obj} res [数据库查询到的数据]
+		 */
 		showList:function(res){
 			var that = this
 			$('.main-tips').addClass('hide')
@@ -55,6 +70,10 @@
 				$('.main-tips').removeClass('hide')
 			}
 		},
+		/**
+		 * [showPage 显示分页]
+		 * @param  {obj} res [数据库查询到的数据]
+		 */
 		showPage: function(res){
 			var that = this
 			A.page({

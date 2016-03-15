@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     swig = require('gulp-swig'),
     markdown = require('gulp-markdown'),
+    jsdoc = require("gulp-jsdoc3"),
     mdTpl = require('./lib/markdownTpl.js'),
     getServe = require('./lib/app.js')
 
@@ -15,8 +16,14 @@ gulp.task('css', function() {
 })
 
 gulp.task('js', function() {
-    gulp.src('./src/static/js/**')
+    gulp.src('./src/static/js/*.js')
         .pipe(gulp.dest('./dist/static/js'))
+})
+
+gulp.task('doc', function (cb) {
+    var config = require('./conf.json');
+    gulp.src(['README.md', './src/static/js/*.js'], {read: false})
+        .pipe(jsdoc(config));
 })
 
 gulp.task('img', function() {
