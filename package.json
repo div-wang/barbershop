@@ -18,6 +18,7 @@
   "devDependencies": {
     "express": "^4.13.0",
     "gulp": "^3.9.1",
+    "gulp-jsdoc": "^0.1.5",
     "gulp-jsdoc3": "^0.2.1",
     "gulp-markdown": "^1.2.0",
     "gulp-swig": "^0.7.4",

@@ -1,7 +1,4 @@
-/**
- * Class representing a dot.
- * @extends Point
- */
+
 ;(function(A){
 	A.resize()
 	A.menuActive()
