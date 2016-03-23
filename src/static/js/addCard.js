@@ -48,14 +48,15 @@
                 	var age = now.getFullYear()-e.date.getFullYear()
                 	if(now.getMonth()<e.date.getMonth()){
                 		age-=1
-                	// }else if(now.getMonth()=e.date.getMonth()&&now.getDate()<e.date.getDate()){
-                	// 	age-=1
+                	}else if(now.getMonth()=e.date.getMonth()&&now.getDate()<e.date.getDate()){
+                		age-=1
                 	}
                 	$('#age').val(age)
                 }
             });
 			if(location.href.match('Edit')){
 				that.getInfo()
+				that.getRecord()
 			}
 		},
 		getData:function(str){
@@ -139,6 +140,24 @@
 				data: params,
 				success: function(res){
 					that.showInfo(res.data[0])
+				},
+				error: function(res){
+					console.log(res);
+					alert('网络错误');
+				}
+			})
+		},
+		getRecord: function(){
+			var that = this,
+				params = A.getParams()
+			if(!params.id) return
+			$.ajax({
+				url: '/getRecord',
+				type: 'GET',
+				dataType: 'json',
+				data: params,
+				success: function(res){
+					that.showRecord(res.data[0])
 				},
 				error: function(res){
 					console.log(res);
