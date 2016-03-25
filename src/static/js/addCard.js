@@ -91,7 +91,18 @@
 				A.tips('请输入7位数字的卡号')
 				return
 			}
-			str=='add'?that.submitInfo(data):that.upInfo(data)
+			if(str=='add'){
+				that.submitInfo(data)
+			}else{
+				that.upInfo(data)
+				var recordData = {
+					cardNo : data.cardNo,
+					num : data.num,
+					time : A.getDate(new Date()),
+					total : data.total
+				}
+				that.addRecord(recordData)
+			}
 		},
 		submitInfo: function(data){	
 			data.date = A.getDate()
@@ -103,11 +114,9 @@
 				dataType: 'json',
 				data: data,
 				success: function(res){
-					console.log(res);
 					alert('添加成功');
 				},
 				error: function(res){
-					console.log(res);
 					alert('添加出错');
 				}
 			})
@@ -120,11 +129,9 @@
 				dataType: 'json',
 				data: data,
 				success: function(res){
-					console.log(res);
 					alert('修改成功');
 				},
 				error: function(res){
-					console.log(res);
 					alert('修改出错');
 				}
 			})
@@ -142,7 +149,21 @@
 					that.showInfo(res.data[0])
 				},
 				error: function(res){
-					console.log(res);
+					alert('网络错误');
+				}
+			})
+		},
+		addRecord: function(data){
+			var that = this
+			$.ajax({
+				url: '/addRecord',
+				type: 'GET',
+				dataType: 'json',
+				data: data,
+				success: function(res){
+					// that.showRecord(res.data)
+				},
+				error: function(res){
 					alert('网络错误');
 				}
 			})
@@ -157,10 +178,9 @@
 				dataType: 'json',
 				data: params,
 				success: function(res){
-					that.showRecord(res.data[0])
+					that.showRecord(res.data)
 				},
 				error: function(res){
-					console.log(res);
 					alert('网络错误');
 				}
 			})
@@ -170,6 +190,18 @@
 			doms.each(function(index, el) {
 				el.value = data[el.id]
 			});
+		},
+		showRecord: function(data){
+			var that = this
+			if(data.length){
+				var html = $('<table class="table table-hover table-bordered"><thead><tr><th class="">id</th><th class="">卡号</th><th class="">使用次数</th><th class="">总数</th><th class="">时间</th></tr></thead><tbody></tbody></table>')
+				$.each(data,function(index, el) {
+					html.find('tbody').append('<tr><td>'+el.id+'</td><td>'+el.cardNo+'</td><td>'+el.consumption+'</td><td>'+el.total+'</td><td>'+A.getDate(el.time)+'</td></td></tr>')
+				})
+				$('.main-table').html(html)
+			}else{
+				$('.main-table').html('')
+			}
 		}
 	}
 	cardInfo.init()
