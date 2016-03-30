@@ -1,5 +1,5 @@
 window.onkeyup = function(event){
-    if (event.keyCode==13) {
+    if (event.keyCode==13&&$('#password').val()!='') {
         $('#submit-login').click();
     } 
 }
@@ -19,7 +19,7 @@ $('#submit-login').on('click',function(event) {
 		return
 	}
 	$.ajax({
-		url: '/login',
+		url: '/loging',
 		type: 'GET',
 		dataType: 'json',
 		data: data,
