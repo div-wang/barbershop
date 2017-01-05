@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     setProcess = require('./lib/process.js')
 
 gulp.task('serve', getServe({
-    port: '3000',
+    port: '80',
     root: '/dist'
 }))
 
