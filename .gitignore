@@ -1,5 +1,6 @@
 /node_modules
 /dist
+/ssl
 /lib/db.js
 .DS_Store
 .DS_Store?

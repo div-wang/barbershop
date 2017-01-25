@@ -17,6 +17,9 @@
   "homepage": "http://div-wang.com",
   "devDependencies": {
     "express": "^4.13.0",
+    "co": "^4.6.0",
+    "thunkify":"^2.1.2",
+    "request": "^2.79.0",
     "gulp": "^3.9.1",
     "gulp-jsdoc": "^0.1.5",
     "gulp-jsdoc3": "^0.2.1",

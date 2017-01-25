@@ -3,7 +3,7 @@
 		url = location.href
 
 	if(!isLogin&&!url.match('login')){
-		location.href = 'login.html'
+		// location.href = 'login.html'
 	}
 
     if (window.performance && window.performance.getEntries) {
